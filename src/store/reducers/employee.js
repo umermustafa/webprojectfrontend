@@ -1,7 +1,7 @@
 import { FETCH_EMPLOYEE } from "../actions/actionTypes";
 
 const initialState = {
-    tasks: []
+    tasks: [],
 };
 
 const employee = (state = initialState, action) => {
@@ -10,7 +10,7 @@ const employee = (state = initialState, action) => {
             return action.payload;
         default:
             return state;
-    };
+    }
 };
 
 export default employee;

@@ -1,6 +1,5 @@
 import * as at from "../actions/actionTypes";
 
-// Reducer
 // Reducer for managing the state of all tasks
 const allTasks = (state = [], action) => {
     switch (action.type) {
@@ -13,12 +12,12 @@ const allTasks = (state = [], action) => {
         case at.EDIT_TASK:
             return state.map(task => {
                 return (
-                    task.id === action.payload ? action.payload : task // Update the edited task in the state
+                    task.id === action.payload.id ? action.payload : task // Update the edited task in the state
                 );
             });
         default:
             return state; // Return the current state by default
-    };
+    }
 };
 
 export default allTasks;

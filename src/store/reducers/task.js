@@ -1,7 +1,7 @@
 import { FETCH_TASK } from "../actions/actionTypes";
 
 const initialState = {
-    employee: {}
+    employee: {},
 }
 
 // Reducer for managing the state of a single task
