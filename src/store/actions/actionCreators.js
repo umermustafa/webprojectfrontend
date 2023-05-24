@@ -6,7 +6,7 @@ import * as at from './actionTypes'
 export const fetchAllEmployees = (employees) => {
     return {
         type: at.FETCH_ALL_EMPLOYEES,
-        payload: employees
+        payload: employees,
     };
 };
 
@@ -14,7 +14,7 @@ export const fetchAllEmployees = (employees) => {
 export const fetchEmployee = (employee) => {
     return {
         type: at.FETCH_EMPLOYEE,
-        payload: employee
+        payload: employee,
     };
 };
 
@@ -22,15 +22,7 @@ export const fetchEmployee = (employee) => {
 export const fetchAllTasks = (tasks) => {
     return {
         type: at.FETCH_ALL_TASKS,
-        payload: tasks
-    };
-};
-
-// Action creator for fetching a single task
-export const fetchTask = (task) => {
-    return {
-        type: at.FETCH_TASK,
-        payload: task
+        payload: tasks,
     };
 };
 
@@ -38,7 +30,7 @@ export const fetchTask = (task) => {
 export const addTask = (task) => {
     return {
         type: at.ADD_TASK,
-        payload: task
+        payload: task,
     };
 };
 
@@ -46,7 +38,7 @@ export const addTask = (task) => {
 export const deleteTask = (taskId) => {
     return {
         type: at.DELETE_TASK,
-        payload: taskId
+        payload: taskId,
     };
 };
 
@@ -54,6 +46,15 @@ export const deleteTask = (taskId) => {
 export const editTask = (task) => {
     return {
         type: at.EDIT_TASK,
-        payload: task
+        payload: task,
+    };
+};
+
+
+// Action creator for fetching a single task
+export const fetchTask = (task) => {
+    return {
+        type: at.FETCH_TASK,
+        payload: task,
     };
 };
