@@ -2,41 +2,38 @@ import { Link } from "react-router-dom";
 
 const EmployeeView = (props) => {
     const { employee, editTask, allTasks } = props;
-    let assignedTasks = allTasks.filter(task => task.employeeId === employee.id);
-    let availableTasks = allTasks.filter(task => task.employeeId !== employee.id);
+    const assignedTasks = allTasks.filter(task => task.employeeId === employee.id);
+    const availableTasks = allTasks.filter(task => task.employeeId !== employee.id);
+
     return (
         <div>
-            <h1>{employee.firstname}</h1>
-            <h3>{employee.department}</h3>
-            <div style={{ display: "flex", flexDirection: "row", justifyContent: "space-evenly" }}>
+            <h1 style={{ textAlign: "center", fontFamily: "Arial, sans-serif" }}>{employee.firstname}</h1>
+            <p style={{ textAlign: "center" }}>Department: {employee.department}</p>
+            <div style={{ display: "flex", justifyContent: "space-evenly" }}>
                 <div>
-                    Assigned Tasks:
-                    {assignedTasks.map(task => {
-                        return (
-                            <div key={task.id}>
-                                <Link to={`/task/${task.id}`}>
-                                    <h4>{task.description}</h4>
-                                </Link>
-                                <button onClick={() => editTask({ id: task.id, employeeId: null })}>x</button>
-                            </div>
-                        );
-                    })}
+                    <h3>Assigned Tasks:</h3>
+                    {assignedTasks.map(task => (
+                        <div key={task.id} style={{ marginBottom: "16px" }}>
+                            <Link to={`/task/${task.id}`}>
+                                <h4>{task.description}</h4>
+                            </Link>
+                            <button onClick={() => editTask({ id: task.id, employeeId: null })}>x</button>
+                        </div>
+                    ))}
                 </div>
                 <div>
-                    Available Tasks:
-                    {availableTasks.map(task => {
-                        return (
-                            <div key={task.id}>
-                                <Link to={`/task/${task.id}`}>
-                                    <h4>{task.description}</h4>
-                                </Link>
-                                <button onClick={() => editTask({ id: task.id, employeeId: employee.id })}>+</button>
-                            </div>
-                        );
-                    })}
+                    <h3>Available Tasks:</h3>
+                    {availableTasks.map(task => (
+                        <div key={task.id} style={{ marginBottom: "16px" }}>
+                            <Link to={`/task/${task.id}`}>
+                                <h4>{task.description}</h4>
+                            </Link>
+                            <button onClick={() => editTask({ id: task.id, employeeId: employee.id })}>+</button>
+                        </div>
+                    ))}
                 </div>
             </div>
-        </div >
+        </div>
     );
 }
 

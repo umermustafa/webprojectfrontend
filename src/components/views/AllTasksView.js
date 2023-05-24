@@ -21,7 +21,7 @@ const AllTasksView = (props) => {
                         <Link to={`/task/${task.id}`}>
                             <h3>{description}</h3>
                         </Link>
-                        <button onClick={() => deleteTask(task.id)}>Delete</button>
+                        <button onClick={() => deleteTask(task.id)}>Delete Task</button>
                     </div>
                 );
             })}
