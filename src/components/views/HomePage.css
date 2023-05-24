@@ -1,0 +1,28 @@
+.title {
+    font-size: 30px;
+    margin-bottom: 10px;
+  }
+  
+  .links {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .link-container {
+    margin: 0 10px;
+  }
+  
+  .link {
+    display: block;
+    padding: 12px 25px;
+    font-size: 20px;
+    text-decoration: none;
+    color: purple;
+    background-color: gainsboro;
+    border-radius: 5px;
+  }
+  
+  .link:hover {
+    background-color: gray;
+  }
+  
